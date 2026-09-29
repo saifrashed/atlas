@@ -1,0 +1,195 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * XSD Studio design system — enterprise IDE aesthetic.
+ * Deep slate-teal surfaces, signal-cyan accent, diff semantics (add/remove/modify).
+ * All colors are oklch tokens; never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 3px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-panel: var(--panel);
+  --color-panel-foreground: var(--panel-foreground);
+  --color-rail: var(--rail);
+  --color-added: var(--added);
+  --color-added-soft: var(--added-soft);
+  --color-removed: var(--removed);
+  --color-removed-soft: var(--removed-soft);
+  --color-modified: var(--modified);
+  --color-modified-soft: var(--modified-soft);
+  --color-syntax-tag: var(--syntax-tag);
+  --color-syntax-attr: var(--syntax-attr);
+  --color-syntax-value: var(--syntax-value);
+  --color-kind-element: var(--kind-element);
+  --color-kind-complex: var(--kind-complex);
+  --color-kind-simple: var(--kind-simple);
+  --color-kind-attribute: var(--kind-attribute);
+  --color-kind-enum: var(--kind-enum);
+  --color-chart-1: var(--kind-element);
+  --color-chart-2: var(--kind-complex);
+  --color-chart-3: var(--kind-simple);
+  --color-chart-4: var(--kind-attribute);
+  --color-chart-5: var(--kind-enum);
+  --color-sidebar: var(--panel);
+  --color-sidebar-foreground: var(--panel-foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--accent);
+  --color-sidebar-accent-foreground: var(--accent-foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.4rem;
+  --background: oklch(0.975 0.008 265);
+  --foreground: oklch(0.22 0.05 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.05 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.05 265);
+  --primary: oklch(0.32 0.21 266);
+  --primary-foreground: oklch(0.99 0.005 265);
+  --secondary: oklch(0.94 0.018 265);
+  --secondary-foreground: oklch(0.28 0.08 266);
+  --muted: oklch(0.95 0.012 265);
+  --muted-foreground: oklch(0.5 0.035 265);
+  --accent: oklch(0.93 0.06 55);
+  --accent-foreground: oklch(0.32 0.15 50);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.99 0.005 265);
+  --border: oklch(0.89 0.02 265);
+  --input: oklch(0.91 0.02 265);
+  --ring: oklch(0.68 0.19 48);
+  --panel: oklch(0.96 0.012 265);
+  --panel-foreground: oklch(0.28 0.06 266);
+  --rail: oklch(0.92 0.022 266);
+  --added: oklch(0.52 0.15 150);
+  --added-soft: oklch(0.93 0.06 150);
+  --removed: oklch(0.55 0.19 22);
+  --removed-soft: oklch(0.94 0.05 22);
+  --modified: oklch(0.63 0.17 62);
+  --modified-soft: oklch(0.95 0.07 62);
+  --syntax-tag: oklch(0.38 0.19 266);
+  --syntax-attr: oklch(0.6 0.17 50);
+  --syntax-value: oklch(0.5 0.13 155);
+  --kind-element: oklch(0.38 0.19 266);
+  --kind-complex: oklch(0.52 0.16 280);
+  --kind-simple: oklch(0.52 0.12 195);
+  --kind-attribute: oklch(0.62 0.19 48);
+  --kind-enum: oklch(0.56 0.14 330);
+}
+
+.dark {
+  --background: oklch(0.17 0.045 266);
+  --foreground: oklch(0.94 0.012 265);
+  --card: oklch(0.22 0.055 266);
+  --card-foreground: oklch(0.94 0.012 265);
+  --popover: oklch(0.23 0.055 266);
+  --popover-foreground: oklch(0.94 0.012 265);
+  --primary: oklch(0.7 0.19 48);
+  --primary-foreground: oklch(0.16 0.05 266);
+  --secondary: oklch(0.27 0.06 266);
+  --secondary-foreground: oklch(0.93 0.012 265);
+  --muted: oklch(0.26 0.055 266);
+  --muted-foreground: oklch(0.7 0.035 265);
+  --accent: oklch(0.32 0.09 55);
+  --accent-foreground: oklch(0.95 0.02 60);
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: oklch(0.97 0.01 265);
+  --border: oklch(0.31 0.06 266);
+  --input: oklch(0.33 0.06 266);
+  --ring: oklch(0.7 0.19 48);
+  --panel: oklch(0.2 0.05 266);
+  --rail: oklch(0.14 0.045 266);
+  --panel-foreground: oklch(0.89 0.015 265);
+  --added: oklch(0.75 0.16 150);
+  --added-soft: oklch(0.3 0.06 155);
+  --removed: oklch(0.7 0.17 25);
+  --removed-soft: oklch(0.3 0.07 25);
+  --modified: oklch(0.8 0.16 62);
+  --modified-soft: oklch(0.32 0.08 62);
+  --syntax-tag: oklch(0.74 0.14 275);
+  --syntax-attr: oklch(0.8 0.15 55);
+  --syntax-value: oklch(0.8 0.13 150);
+  --kind-element: oklch(0.74 0.14 270);
+  --kind-complex: oklch(0.76 0.13 295);
+  --kind-simple: oklch(0.78 0.11 195);
+  --kind-attribute: oklch(0.78 0.16 52);
+  --kind-enum: oklch(0.76 0.14 335);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+}
+
+@utility panel-surface {
+  background-color: var(--color-panel);
+  color: var(--color-panel-foreground);
+}
+
+@utility rail-surface {
+  background-color: var(--color-rail);
+}
+
+@utility tree-guide {
+  border-left: 1px dashed var(--color-border);
+}
+
+@utility ide-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklch, var(--color-border) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--color-border) 55%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}

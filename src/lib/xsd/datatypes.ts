@@ -1,0 +1,71 @@
+/** Built-in XML Schema 1.0 datatypes, grouped for the type picker. */
+export const XSD_BUILTIN_TYPE_GROUPS: { label: string; types: string[] }[] = [
+  {
+    label: "String types",
+    types: [
+      "xs:string",
+      "xs:normalizedString",
+      "xs:token",
+      "xs:language",
+      "xs:Name",
+      "xs:NCName",
+      "xs:NMTOKEN",
+      "xs:NMTOKENS",
+      "xs:ID",
+      "xs:IDREF",
+      "xs:IDREFS",
+      "xs:ENTITY",
+      "xs:ENTITIES",
+    ],
+  },
+  {
+    label: "Numeric types",
+    types: [
+      "xs:decimal",
+      "xs:integer",
+      "xs:int",
+      "xs:long",
+      "xs:short",
+      "xs:byte",
+      "xs:nonNegativeInteger",
+      "xs:positiveInteger",
+      "xs:nonPositiveInteger",
+      "xs:negativeInteger",
+      "xs:unsignedInt",
+      "xs:unsignedLong",
+      "xs:unsignedShort",
+      "xs:unsignedByte",
+      "xs:float",
+      "xs:double",
+    ],
+  },
+  {
+    label: "Date & time types",
+    types: [
+      "xs:date",
+      "xs:dateTime",
+      "xs:time",
+      "xs:duration",
+      "xs:gYear",
+      "xs:gYearMonth",
+      "xs:gMonth",
+      "xs:gMonthDay",
+      "xs:gDay",
+    ],
+  },
+  {
+    label: "Other types",
+    types: [
+      "xs:boolean",
+      "xs:base64Binary",
+      "xs:hexBinary",
+      "xs:anyURI",
+      "xs:QName",
+      "xs:NOTATION",
+      "xs:anyType",
+      "xs:anySimpleType",
+    ],
+  },
+];
+
+export const XSD_BUILTIN_TYPES = XSD_BUILTIN_TYPE_GROUPS.flatMap((g) => g.types);

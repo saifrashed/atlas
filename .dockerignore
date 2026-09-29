@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-node
+.output
+.git
+.lovable
+.workspace
+*.log
+.DS_Store
+tsconfig.tsbuildinfo
+.wrangler
+.dev.vars
